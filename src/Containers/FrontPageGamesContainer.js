@@ -6,6 +6,7 @@ import { fetchPublicGames } from '../actions'
 import '../index.css';
 import App from '../App';
 import rootReducer from '../reducer'
+import GameCard from '../Cards/GameCard'
 // import React from 'react';
 
 class FrontPageGamesContainer extends React.Component {
@@ -24,11 +25,18 @@ class FrontPageGamesContainer extends React.Component {
         }
         // console.log('These are the front page games', this.props)
         // let pgArr = props.frontPageGames.map(game => )
+        let publicGamesComponents = this.props.frontPageGames.map(
+            game => <GameCard
+                key = {game.id}
+                title = {game.title}
+                description = {game.description}
+            />)
         return (
             <div>
-                <h1>Check out some of our highest rated games!</h1>
+                {/* <h1>Check out some of our highest rated games!</h1>
                 <h2>{this.props.frontPageGames[0].title}</h2>
-                <p>{this.props.frontPageGames[0].description}</p>
+                <p>{this.props.frontPageGames[0].description}</p> */}
+                {publicGamesComponents}
                 {/* <p>foobar</p> */}
             </div>
         )
