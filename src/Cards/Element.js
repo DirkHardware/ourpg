@@ -7,14 +7,6 @@ import '../index.css';
 import App from '../App';
 import rootReducer from '../reducer'
 
-const GameCard = (props) => {
-
-    return(
-        <div>
-            <h3>Title: {props.title}</h3>
-            <p>Description: {props.description}</p>
-        </div>
-    )
+const Element = (props) => {
+    
 }
-
-export default GameCard

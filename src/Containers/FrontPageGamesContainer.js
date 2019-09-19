@@ -33,11 +33,8 @@ class FrontPageGamesContainer extends React.Component {
             />)
         return (
             <div>
-                {/* <h1>Check out some of our highest rated games!</h1>
-                <h2>{this.props.frontPageGames[0].title}</h2>
-                <p>{this.props.frontPageGames[0].description}</p> */}
+                <h2>Check out some of our highest rated games!</h2>
                 {publicGamesComponents}
-                {/* <p>foobar</p> */}
             </div>
         )
     }
