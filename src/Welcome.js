@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
+import { Route, Switch, Link } from 'react-router-dom'
 import './App.css';
 import Redux from 'redux';
 import { connect } from 'react-redux';
@@ -8,8 +9,10 @@ import FrontPageGamesContainer from './Containers/FrontPageGamesContainer'
 function Welcome(props) {
     return(
         <div>
-            <h1>This is the welcome page!</h1>
+            <Route path="/home" render={() =>
+            // <h1>This is the welcome page!</h1>
             <FrontPageGamesContainer/>
+            }/>
         </div>
     )
 }

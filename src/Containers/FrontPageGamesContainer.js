@@ -28,7 +28,7 @@ class FrontPageGamesContainer extends React.Component {
         // let pgArr = props.frontPageGames.map(game => )
         let publicGamesComponents = this.props.frontPageGames.map(
             game => <GameCard
-                key = {game.id}
+                id = {game.id}
                 title = {game.title}
                 description = {game.description}
             />)

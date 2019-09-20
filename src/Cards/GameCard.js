@@ -6,14 +6,20 @@ import { fetchPublicGames } from '../actions'
 import '../index.css';
 import App from '../App';
 import rootReducer from '../reducer'
-import { routes, } from 'react-router-dom'
+import { Routes, Switch, Link } from 'react-router-dom'
 
 
 const GameCard = (props) => {
 
+    // let linkString = `games/${props.id}`
+    let linkString = `/home`
+
+
     return(
         <div>
+            <Link to={linkString}>
             <h3>Title: {props.title}</h3>
+            </Link>
             <p>Description: {props.description}</p>
         </div>
     )
