@@ -7,6 +7,7 @@ import '../index.css';
 import App from '../App';
 import rootReducer from '../reducer'
 import Element from '../Cards/Element'
+import { BrowserRouter } from 'react-router'
 
 class PublicGameView extends React.Component {
 
@@ -26,5 +27,8 @@ function msp(state){
 }
 
 function mdp(state){
-    return({fetchGameElements: fetchGameElements(dispatch)})
+    let id = 2
+    return({fetchGameElements: fetchGameElements(dispatch, id)})
 }
+
+export default connect(msp, mdp, PublicGameView)
