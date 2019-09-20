@@ -47,6 +47,7 @@ function msp(state) {
 }
 
 function mdp(dispatch) {
+    let id = 2
     return { fetchPublicGames: fetchPublicGames(dispatch, id) }
 }
 
