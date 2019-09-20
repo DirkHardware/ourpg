@@ -9,10 +9,7 @@ import FrontPageGamesContainer from './Containers/FrontPageGamesContainer'
 function Welcome(props) {
     return(
         <div>
-            <Route path="/home" render={() =>
-            // <h1>This is the welcome page!</h1>
             <FrontPageGamesContainer/>
-            }/>
         </div>
     )
 }
