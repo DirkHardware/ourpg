@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { routes, } from 'react-router-dom'
 import { createStore } from 'redux'
 import { Provider, connect } from 'react-redux'
 import { fetchPublicGames } from '../actions'
@@ -46,7 +47,7 @@ function msp(state) {
 }
 
 function mdp(dispatch) {
-    return { fetchPublicGames: fetchPublicGames(dispatch) }
+    return { fetchPublicGames: fetchPublicGames(dispatch, id) }
 }
 
 export default connect(msp, mdp)(FrontPageGamesContainer) 

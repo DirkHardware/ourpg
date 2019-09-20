@@ -10,7 +10,7 @@ let defaultState = {
     selectedGame: null,
     selectedGameElements: [],
     selectedElement: null, 
-    selectedElementContent: '',
+    // selectedElementContent: '',
     userRolls: '',  
 }
 
@@ -37,9 +37,31 @@ function handleFrontPageGames(state = defaultState.frontPageGames, action) {
     }
 }
 
+function handleElements(state = defaultState.selectedElement, action) {
+    console.log('handleElement', action.type)
+    switch (action.type){
+        case "FETCH ELEMENT":
+            return action.payload
+        default: 
+            return state
+    }
+}
+
+function handleGameElements(state = defaultState.selectedGameElements, action) {
+    console.log('handleGameElement', action.type)
+    switch (action.type){
+        case "FETCH GAME ELEMENTS":
+            return action.payload
+        default: 
+            return state
+    }
+}
+
 const rootReducer = combineReducers({
     loggedIn: handleLogOut,
-    frontPageGames: handleFrontPageGames
+    frontPageGames: handleFrontPageGames,
+    element: handleElements,
+    gameElements: handleGameElements
 })
 
 export default rootReducer
