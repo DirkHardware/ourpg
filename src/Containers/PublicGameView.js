@@ -11,11 +11,11 @@ import { BrowserRouter } from 'react-router'
 
 class PublicGameView extends React.Component {
 
-    // componentDidMount() {
-    //     // fire off dispatch to send my fetch request 
-    //     this.props.fetchGameElements()
-    //     console.log(this.props.element)
-    // }
+    componentDidMount() {
+        // fire off dispatch to send my fetch request 
+        this.props.fetchGameElements()
+        console.log("public view component mounting", this.props)
+    }
 
     render(){
         console.log('public game view test', this.props)
