@@ -4,40 +4,41 @@ import './App.css';
 import Redux from 'redux';
 import thunk from 'redux-thunk';
 import { Provider, connect } from 'react-redux'
-import { Route, Switch, Link } from 'react-router-dom'
+import { Route, Switch, Link, BrowserRouter as Router } from 'react-router-dom'
 import Welcome from './Welcome.js'
-import { fetchPublicGames } from './actions'
+import { fetchPublicGames, fetchAllGames } from './actions'
 import GameCard from './Cards/GameCard'
+import PublicGameView from './Containers/PublicGameView'
 
 class App extends React.Component {
 
-  // componentDidMount() {
-  //   // fire off dispatch to send my fetch request 
-  //   this.props.fetchPublicGames()
-  // }
+  componentDidMount() {
+    // fire off dispatch to send my fetch request 
+    this.props.fetchAllGames()
+  }
 
   render() {
-  return (
-    <div className="App">
-      <Switch>
-      <Route path="/home" render={() =>
-        <Welcome/>
-      }/>
-      <Route path='/GameCard' render={() =>
-        <GameCard
-          id='1'
-          title='Pathfinder'
-          description='A game for D&D grognards who dont like 5th edition but their 3.5 edition rulebooks have all rotted' 
-        />
-      }/>
-      </Switch>
-    </div>
-  )};
-}
+    return (
+      <div className="App">
+        <Router>
+          <Switch>
+            <Route path="/home" render={() =>
+              <Welcome/>
+            }/>
+            <Route path='/games/:id' render={(routerProps) => (
+                <PublicGameView
+                id={routerProps.match.params.id}
+              />
+            )}/>
+          </Switch>
+         </Router>
+       </div>
+    )};
+  }
 
 
 function mdp(dispatch) {
-  return { fetchPublicGames: dispatch(fetchPublicGames) }
+  return { fetchPublicGames: dispatch(fetchPublicGames), fetchAllGames: dispatch(fetchAllGames) }
 }
 
 export default connect(null, mdp)(App);

@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux'
 import { Provider, connect } from 'react-redux'
-import { fetchElements } from '../actions'
+import { fetchElement } from '../actions'
 import '../index.css';
 import App from '../App';
 import rootReducer from '../reducer'
@@ -17,12 +17,15 @@ class Element extends React.Component {
 
     render(){
         if(this.props.element === null){
+            return(
             <h2>loading</h2>
+            )
         }
         return (
             <div>
-                <h3>{this.props.element}</h3>
-                <p>{publicGamesComponents}</p>
+                <p> test </p>
+                {/* <h3>{this.props.element}</h3>
+                <p>{publicGamesComponents}</p> */}
             </div>
         )
     }
@@ -34,7 +37,7 @@ function msp(state) {
 }
 
 function mdp(dispatch) {
-    return { fetchElements: fetchElements(dispatch) }
+    return { fetchElements: fetchElement(dispatch) }
 }
 
 export default connect(msp, mdp)(Element) 
