@@ -6,7 +6,7 @@ import { fetchElement, fetchGameElements } from '../actions'
 import '../index.css';
 import App from '../App';
 import rootReducer from '../reducer'
-import Element from '../Cards/Element'
+import Element from '../Cards/ElementCard'
 import { BrowserRouter } from 'react-router'
 
 class PublicGameView extends React.Component {
@@ -28,11 +28,17 @@ class PublicGameView extends React.Component {
                 <h1>loading</h1>
             )
         }
+        let elementComponents = this.props.gameElements.map(
+            game => <Element
+                id = {game.id}
+                title = {game.title}
+                description = {game.description}
+            />)
         // console.log('These are the front page games', this.props)
         // let pgArr = props.frontPageGames.map(game => )
         return (
             <div>
-                <h2>This game has {this.props.gameElements.length} elements </h2>
+                <h2>{elementComponents} </h2>
             </div>
         )
     }
