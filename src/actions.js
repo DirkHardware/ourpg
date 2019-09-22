@@ -22,7 +22,7 @@ function fetchAllGames(dispatch) {
 
 function fetchGameElements(dispatch, id){
     return function () {
-        fetch(`http"//localhost:3000/games/${id}/elements`)
+        fetch(`http://localhost:3000/games/${id}/elements`)
         .then(resp => resp.json())
         .then(data => {
             dispatch({type: "FETCH GAME ELEMENTS", payload: data})
