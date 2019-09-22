@@ -2,12 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux'
 import { Provider, connect } from 'react-redux'
-import { fetchElement, fetchGameElements } from '../actions'
+import { fetchGameElements } from '../actions'
 import '../index.css';
 import App from '../App';
 import rootReducer from '../reducer'
 import ElementCard from '../Cards/ElementCard'
-import { BrowserRouter } from 'react-router'
 
 class PublicGameView extends React.Component {
 
@@ -49,7 +48,7 @@ function msp(state){
 }
 
 function mdp(dispatch, props){
-    console.log('mdp props', props)
+    // console.log('mdp props', props)
     let id = props.id
     return({fetchGameElements: fetchGameElements(dispatch, id)})
 }

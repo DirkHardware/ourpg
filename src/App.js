@@ -5,10 +5,11 @@ import Redux from 'redux';
 import thunk from 'redux-thunk';
 import { Provider, connect } from 'react-redux'
 import { Route, Switch, Link, BrowserRouter as Router } from 'react-router-dom'
-import Welcome from './Welcome.js'
+import Welcome from './Pages/Welcome'
 import { fetchPublicGames, fetchAllGames } from './actions'
 import GameCard from './Cards/GameCard'
-import PublicGameView from './Containers/PublicGameView'
+import PublicGameView from './Pages/PublicGameView'
+import PublicElementView from './Pages/PublicElementView'
 
 class App extends React.Component {
 
@@ -27,6 +28,11 @@ class App extends React.Component {
             }/>
             <Route path='/games/:id' render={(routerProps) => (
                 <PublicGameView
+                id={routerProps.match.params.id}
+              />
+            )}/>
+            <Route path='/elements/:id' render={(routerProps) => (
+                <PublicElementView
                 id={routerProps.match.params.id}
               />
             )}/>

@@ -11,7 +11,7 @@ import { Routes, Switch, Link } from 'react-router-dom'
 
 const ElementCard = (props) => {
 
-    let linkString = `games/${props.id}`
+    let linkString = `elements/${props.id}`
 
     // componentDidMount() {
     //     // fire off dispatch to send my fetch request 
