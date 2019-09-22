@@ -6,7 +6,7 @@ import { fetchElement, fetchGameElements } from '../actions'
 import '../index.css';
 import App from '../App';
 import rootReducer from '../reducer'
-import Element from '../Cards/ElementCard'
+import ElementCard from '../Cards/ElementCard'
 import { BrowserRouter } from 'react-router'
 
 class PublicGameView extends React.Component {
@@ -29,7 +29,7 @@ class PublicGameView extends React.Component {
             )
         }
         let elementComponents = this.props.gameElements.map(
-            game => <Element
+            game => <ElementCard
                 id = {game.id}
                 title = {game.title}
                 description = {game.description}

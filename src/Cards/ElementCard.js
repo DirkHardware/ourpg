@@ -34,13 +34,4 @@ const ElementCard = (props) => {
         )
     }
 
-function msp(state) {
-    console.log("map state to props", state)
-    return { element: state.element }
-}
-
-function mdp(dispatch) {
-    return { fetchElements: fetchElement(dispatch) }
-}
-
-export default connect(msp, mdp)(Element) 
+export default ElementCard 
