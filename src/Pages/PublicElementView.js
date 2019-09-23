@@ -10,14 +10,15 @@ class PublicElementView extends React.Component {
 
     componentDidMount() {
         this.props.fetchElement()
-        console.log(this.props.element)
+        console.log("element id", this.props.e_id)
+        // console.log(this.props.element)
     }  
 
     render(){
+        console.log(this.props.selectedElement)
         return(
         <div>
             <p>this is a test</p>
-            <p>{this.props.selectedElement.content}</p>
         </div>)
     }
 }
@@ -26,10 +27,10 @@ function msp(state) {
     return({loggedIn: state.loggedIn, selectedElement: state.selectedElement })
 }
 
-function mdp(dispatch){
-    // let id = props.id
-    // return({fetchElement: fetchElement(dispatch, id)})
-    return({fetchElement: fetchElement(dispatch)})
+function mdp(dispatch, props){
+    let id = props.id
+    return({fetchElement: fetchElement(dispatch, id)})
+    // return({fetchElement: fetchElement(dispatch)})
 }
 
 export default connect(msp, mdp)(PublicElementView)

@@ -11,7 +11,9 @@ import { Routes, Switch, Link } from 'react-router-dom'
 
 const ElementCard = (props) => {
 
-    let linkString = `elements/${props.id}`
+    let linkString = `/elements/${props.id}`
+
+    console.log('link string', linkString)
 
     // componentDidMount() {
     //     // fire off dispatch to send my fetch request 
