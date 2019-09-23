@@ -31,7 +31,7 @@ class App extends React.Component {
                 id={routerProps.match.params.id}
               />
             )}/>
-            <Route path='/elements/:id' render={(routerProps) => (
+            <Route path='/publicelements/:id' render={(routerProps) => (
                 <PublicElementView
                 id={routerProps.match.params.id}
               />

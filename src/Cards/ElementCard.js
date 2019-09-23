@@ -11,7 +11,7 @@ import { Routes, Switch, Link } from 'react-router-dom'
 
 const ElementCard = (props) => {
 
-    let linkString = `/elements/${props.id}`
+    let linkString = `/publicelements/${props.id}`
 
     console.log('link string', linkString)
 
