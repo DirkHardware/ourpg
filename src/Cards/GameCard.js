@@ -12,8 +12,6 @@ import { Routes, Switch, Link } from 'react-router-dom'
 const GameCard = (props) => {
 
     let linkString = `games/${props.id}`
-    // let linkString = `/GameCard`
-
 
     return(
         <div>

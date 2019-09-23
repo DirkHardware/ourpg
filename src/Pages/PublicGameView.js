@@ -1,10 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { createStore } from 'redux'
 import { Provider, connect } from 'react-redux'
 import { fetchGameElements } from '../actions'
 import '../index.css';
-import App from '../App';
 import rootReducer from '../reducer'
 import ElementCard from '../Cards/ElementCard'
 
@@ -13,13 +10,9 @@ class PublicGameView extends React.Component {
     componentDidMount() {
         // fire off dispatch to send my fetch request 
         this.props.fetchGameElements()
+        console.log('the id in component did mount is', this.props.id)
         console.log("public view component mounting", this.props.gameElements)
     }
-
-    // render(){
-    //     // console.log('public game view test', this.props)
-    //     return(<p>this is a test {this.props.id}</p>)
-    // }
 
     render() {
         if(this.props.gameElements.length === 0) {
@@ -33,8 +26,6 @@ class PublicGameView extends React.Component {
                 title = {game.title}
                 description = {game.description}
             />)
-        // console.log('These are the front page games', this.props)
-        // let pgArr = props.frontPageGames.map(game => )
         return (
             <div>
                 <h2>{elementComponents} </h2>
@@ -48,7 +39,6 @@ function msp(state){
 }
 
 function mdp(dispatch, props){
-    // console.log('mdp props', props)
     let id = props.id
     return({fetchGameElements: fetchGameElements(dispatch, id)})
 }

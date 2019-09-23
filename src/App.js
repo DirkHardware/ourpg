@@ -33,7 +33,7 @@ class App extends React.Component {
             )}/>
             <Route path='/elements/:id' render={(routerProps) => (
                 <PublicElementView
-                e_id={routerProps.match.params.e_id}
+                id={routerProps.match.params.id}
               />
             )}/>
           </Switch>

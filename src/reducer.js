@@ -60,7 +60,7 @@ function handleGameElements(state = defaultState.selectedGameElements, action) {
 const rootReducer = combineReducers({
     loggedIn: handleLogOut,
     frontPageGames: handleFrontPageGames,
-    element: handleElements,
+    selectedElement: handleElements,
     gameElements: handleGameElements
 })
 
