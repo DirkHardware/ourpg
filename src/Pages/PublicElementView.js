@@ -10,7 +10,11 @@ class PublicElementView extends React.Component {
     componentDidMount() {
         this.props.fetchElement()
         console.log(this.props.selectedElement)
-    }  
+    }
+    
+    // check = (props) => {
+    //     console.log(props.gameElements.findIndex(nextPage(props.selectedElement.order)));
+    // }
 
     render() {
         if(!this.props.selectedElement) {
@@ -19,7 +23,10 @@ class PublicElementView extends React.Component {
             )
         }
         else {
-            console.log(this.props.gameElements)
+            console.log('public element view game elements', this.props.gameElements)
+            // check = (props) => {
+            //     console.log(props.gameElements.findIndex(nextPage(props.selectedElement.order)));
+            // }
             return (
             <div>
                 <h2>Title: {this.props.selectedElement.title}</h2>
@@ -31,8 +38,20 @@ class PublicElementView extends React.Component {
     }
 }
 
+function nextPage(element, currentOrder) {
+    return element.order === currentOrder + 1 
+}
+
+function check(props) {
+    console.log(props.gameElements.findIndex(nextPage(props.selectedElement.order)));
+}
+
+// let nextpage = check(props.gameElements)
+
+
 function msp(state) {   
-    return({loggedIn: state.loggedIn, selectedElement: state.selectedElement })
+    console.log('MSP', state)
+    return({loggedIn: state.loggedIn, selectedElement: state.selectedElement, gameElements: state.gameElements })
 }
 
 function mdp(dispatch, props){
