@@ -6,14 +6,12 @@ import { fetchElement } from '../actions'
 import '../index.css';
 import App from '../App';
 import rootReducer from '../reducer'
-import { Routes, Switch, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 const ElementCard = (props) => {
 
     let linkString = `/publicelements/${props.id}`
-
-    console.log('link string', linkString)
 
     // componentDidMount() {
     //     // fire off dispatch to send my fetch request 

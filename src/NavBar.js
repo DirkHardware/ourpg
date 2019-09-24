@@ -1,11 +1,17 @@
 import React from 'react';
 import logo from './logo.svg';
-import { Route, Switch, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import './App.css';
 import Redux from 'redux';
 import { connect } from 'react-redux';
 
 function NavBar() {
+    state = {
+        currentUser = JSON.parse(window.localStorage.getItem('currentUser'))
+    }
+    
+    let loginLinkString='/login'
+    let homeLinkString='/home'
     return(
         <div className='Nav-bar'>
             <p>New Game</p>
@@ -13,10 +19,13 @@ function NavBar() {
             <p>Search Games</p>
             <p>Dice Roller</p>
             <p>Probability Calculator</p>
-            <Link to='/login/'>
+            <Link to={loginLinkString}>
             <p>Log In</p>
             </Link>
             <p>SignUp</p>
+            <Link to={homeLinkString}>
+            <p>Home</p>
+            </Link>
         </div>
     )
 }

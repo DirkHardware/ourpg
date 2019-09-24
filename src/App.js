@@ -23,8 +23,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <NavBar/>
         <Router>
+        <NavBar/>
           <Switch>
             <Route path="/home" render={() =>
               <Welcome/>

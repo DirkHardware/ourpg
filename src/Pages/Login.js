@@ -5,7 +5,7 @@ import '../index.css';
 import rootReducer from '../reducer'
 import LoginCard from '../Cards/LoginCard'
 
-class PublicGameView extends React.Component {
+class Login extends React.Component {
 
     // componentDidMount() {
     //     // fire off dispatch to send my fetch request 
@@ -48,4 +48,4 @@ function mdp(dispatch, username){
     return({fetchUser: fetchUser(dispatch, username)})
 }
 
-export default connect(msp, mdp)(PublicGameView)
+export default connect(msp, mdp)(Login)
