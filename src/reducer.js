@@ -15,7 +15,6 @@ let defaultState = {
 }
 
 function handleLogOut(state = defaultState.loggedIn, action) {
-    console.log('handleLogOut', action.type)
     switch (action.type) {
         case "LOG OUT":
             return state ? false : state
@@ -27,10 +26,8 @@ function handleLogOut(state = defaultState.loggedIn, action) {
 }
 
 function handleFrontPageGames(state = defaultState.frontPageGames, action) {
-    console.log('handleGames', action.type)
     switch (action.type) {
         case "FETCH PUBLIC GAMES":
-            // console.log('these are the front page public games', state)
             return action.payload
         default: 
             return state
@@ -38,7 +35,6 @@ function handleFrontPageGames(state = defaultState.frontPageGames, action) {
 }
 
 function handleElements(state = defaultState.selectedElement, action) {
-    console.log('handleElement', action.type)
     switch (action.type){
         case "FETCH ELEMENT":
             return action.payload
@@ -48,7 +44,6 @@ function handleElements(state = defaultState.selectedElement, action) {
 }
 
 function handleGameElements(state = defaultState.selectedGameElements, action) {
-    console.log('handleGameElement', action.type)
     switch (action.type){
         case "FETCH GAME ELEMENTS":
             return action.payload
@@ -57,11 +52,21 @@ function handleGameElements(state = defaultState.selectedGameElements, action) {
     }
 }
 
+function handleUser(state = defaultState.currentUser, action){
+    switch (action.type){
+        case "FETCH USER":
+            return action.payload
+        default:
+            return state
+    }
+}
+
 const rootReducer = combineReducers({
     loggedIn: handleLogOut,
     frontPageGames: handleFrontPageGames,
     selectedElement: handleElements,
-    gameElements: handleGameElements
+    gameElements: handleGameElements,
+    currentUser: handleUser
 })
 
 export default rootReducer

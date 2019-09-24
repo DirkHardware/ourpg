@@ -8,8 +8,10 @@ import { Route, Switch, Link, BrowserRouter as Router } from 'react-router-dom'
 import Welcome from './Pages/Welcome'
 import { fetchPublicGames, fetchAllGames } from './actions'
 import GameCard from './Cards/GameCard'
+import NavBar from './NavBar'
 import PublicGameView from './Pages/PublicGameView'
 import PublicElementView from './Pages/PublicElementView'
+import Login from './Pages/Login'
 
 class App extends React.Component {
 
@@ -21,10 +23,14 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <NavBar/>
         <Router>
           <Switch>
             <Route path="/home" render={() =>
               <Welcome/>
+            }/>
+            <Route path="/login" render={() =>
+              <Login/>
             }/>
             <Route path='/games/:id' render={(routerProps) => (
                 <PublicGameView

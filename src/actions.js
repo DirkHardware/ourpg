@@ -30,7 +30,7 @@ function fetchGameElements(dispatch, id){
     }
 }
 
-function fetchElement(dispatch, id) {
+function fetchElement(dispatch, id){
     return function() {
         fetch(`http://localhost:3000/elements/${id}`)
         .then(resp => resp.json())
@@ -40,4 +40,13 @@ function fetchElement(dispatch, id) {
     }
 }
 
-export { fetchPublicGames, fetchGameElements, fetchElement, fetchAllGames }
+function fetchUser(dispatch, username){
+    return function() {
+        fetch(`http://localhost:3000/users/${username}`)
+        .then(resp => resp.json())
+        .then(data =>
+            dispatch({type: "FETCH USER", payload: data}))
+    }
+}
+
+export { fetchPublicGames, fetchGameElements, fetchElement, fetchAllGames, fetchUser }
