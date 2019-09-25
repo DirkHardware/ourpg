@@ -1,6 +1,6 @@
 import { combineReducers, bindActionCreators } from 'redux'
-import { SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION } from 'constants'
-import { connect } from 'tls'
+// import { SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION } from 'constants'
+// import { connect } from 'tls'
 
 let defaultState = {
     loggedIn: false,
@@ -61,12 +61,22 @@ function handleUser(state = defaultState.currentUser, action){
     }
 }
 
+function handleUserGames(state = defaultState.userGames, action){
+    switch (action.type){
+        case "FETCH USER GAMES":
+            return action.payload
+        default: 
+            return state
+    }
+}
+
 const rootReducer = combineReducers({
     loggedIn: handleLogOut,
     frontPageGames: handleFrontPageGames,
     selectedElement: handleElements,
     gameElements: handleGameElements,
-    currentUser: handleUser
+    currentUser: handleUser,
+    userGames: handleUserGames
 })
 
 export default rootReducer

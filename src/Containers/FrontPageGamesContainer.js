@@ -1,13 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { Routes, } from 'react-router-dom'
-import { createStore } from 'redux'
-import { Provider, connect } from 'react-redux'
+import { connect } from 'react-redux'
 import { fetchPublicGames } from '../actions'
 import '../index.css';
-import App from '../App';
-import rootReducer from '../reducer'
-import GameCard from '../Cards/GameCard'
+
+import PublicGameCard from '../Cards/PublicGameCard'
 // import React from 'react';
 
 class FrontPageGamesContainer extends React.Component {
@@ -15,7 +11,6 @@ class FrontPageGamesContainer extends React.Component {
     componentDidMount() {
         // fire off dispatch to send my fetch request 
         this.props.fetchPublicGames()
-        console.log(this.props.frontPageGames)
     }
     
     render() {
@@ -27,13 +22,13 @@ class FrontPageGamesContainer extends React.Component {
         // console.log('These are the front page games', this.props)
         // let pgArr = props.frontPageGames.map(game => )
         let publicGamesComponents = this.props.frontPageGames.map(
-            game => <GameCard
+            game => <PublicGameCard
                 id = {game.id}
                 title = {game.title}
                 description = {game.description}
             />)
         return (
-            <div>
+            <div className='front-page-game-container'>
                 <h2>Check out some of our highest rated games!</h2>
                 {publicGamesComponents}
             </div>
@@ -42,7 +37,6 @@ class FrontPageGamesContainer extends React.Component {
 }
 
 function msp(state) {
-    console.log("map state to props", state)
     return { loggedIn: state.loggedIn, frontPageGames: state.frontPageGames }
 }
 

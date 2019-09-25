@@ -1,15 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { createStore } from 'redux'
-import { Provider, connect } from 'react-redux'
-import { fetchElement } from '../actions'
 import '../index.css';
-import App from '../App';
-import rootReducer from '../reducer'
 import { Link } from 'react-router-dom'
 
 
-const ElementCard = (props) => {
+const PublicElementCard = (props) => {
 
     let linkString = `/publicelements/${props.id}`
 
@@ -34,4 +28,4 @@ const ElementCard = (props) => {
         )
     }
 
-export default ElementCard 
+export default PublicElementCard 

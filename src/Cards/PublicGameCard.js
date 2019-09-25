@@ -1,15 +1,14 @@
 import React from 'react';
 import '../index.css';
-import rootReducer from '../reducer'
 import { Link } from 'react-router-dom'
 
 
-const GameCard = (props) => {
+const PublicGameCard = (props) => {
 
-    let linkString = `games/${props.id}`
+    let linkString = `/publicgames/${props.id}`
 
     return(
-        <div>
+        <div className='public-game-card'>
             <Link to={linkString}>
             <h3>Title: {props.title}</h3>
             </Link>
@@ -18,4 +17,4 @@ const GameCard = (props) => {
     )
 }
 
-export default GameCard
+export default PublicGameCard

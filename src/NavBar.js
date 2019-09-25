@@ -1,33 +1,56 @@
 import React from 'react';
-import logo from './logo.svg';
 import { Link } from 'react-router-dom'
 import './App.css';
 import Redux from 'redux';
 import { connect } from 'react-redux';
 
-function NavBar() {
+class NavBar extends React.Component {
     state = {
-        currentUser = JSON.parse(window.localStorage.getItem('currentUser'))
+        currentUser: JSON.parse(window.localStorage.getItem('currentUser'))
     }
-    
-    let loginLinkString='/login'
-    let homeLinkString='/home'
-    return(
+
+
+    render() {
+        let userHomeString = `/userhome/${this.state.currentUser.id}`
+        // console.log('navbar', this.state.currentUser)
+        if (!this.state.currentUser) {
+            return(
+                <div className='Nav-bar'>
+                    <p>New Game</p>
+                    <p>View Games</p>
+                    <p>Search Games</p>
+                    <p>Dice Roller</p>
+                    <p>Probability Calculator</p>
+                    <Link to='/login'>
+                    <p>Log In</p>
+                    </Link>
+                    <p>SignUp</p>
+                    <Link to='/home'>
+                    <p>Home</p>
+                    </Link>
+                </div>
+            )
+        } else {
+    return (
         <div className='Nav-bar'>
-            <p>New Game</p>
-            <p>View Games</p>
-            <p>Search Games</p>
-            <p>Dice Roller</p>
-            <p>Probability Calculator</p>
-            <Link to={loginLinkString}>
-            <p>Log In</p>
-            </Link>
-            <p>SignUp</p>
-            <Link to={homeLinkString}>
-            <p>Home</p>
-            </Link>
-        </div>
-    )
+                    <p>New Game</p>
+                    <Link to={userHomeString}>
+                    <p>My Games</p>
+                    </Link>
+                    <p>View Games</p>
+                    <p>Search Games</p>
+                    <p>Dice Roller</p>
+                    <p>Probability Calculator</p>
+                    <Link to='/login'>
+                    <p>Log Out</p>
+                    </Link>
+                    <p>SignUp</p>
+                    <Link to='/home'>
+                    <p>Home</p>
+                    </Link>
+                </div>
+    )}
+    }
 }
 
 // function msp(state) {

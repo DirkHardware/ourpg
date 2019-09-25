@@ -1,17 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Redux from 'redux';
-import thunk from 'redux-thunk';
-import { Provider, connect } from 'react-redux'
+import { connect } from 'react-redux'
 import { Route, Switch, Link, BrowserRouter as Router } from 'react-router-dom'
 import Welcome from './Pages/Welcome'
 import { fetchPublicGames, fetchAllGames } from './actions'
-import GameCard from './Cards/GameCard'
 import NavBar from './NavBar'
 import PublicGameView from './Pages/PublicGameView'
 import PublicElementView from './Pages/PublicElementView'
 import Login from './Pages/Login'
+import NewElement from './Pages/NewElement'
+import UserHome from './Pages/UserHome'
+import UserGameView from './Pages/UserGameView'
+import UserElementView from './Pages/UserElementView'
 
 class App extends React.Component {
 
@@ -29,16 +29,36 @@ class App extends React.Component {
             <Route path="/home" render={() =>
               <Welcome/>
             }/>
+            <Route path='/userhome/:id' render={(routerProps) =>
+              <UserHome
+              id={routerProps.match.params.id}
+              />
+            }/>
             <Route path="/login" render={() =>
               <Login/>
             }/>
-            <Route path='/games/:id' render={(routerProps) => (
+            <Route path='/publicgames/:id' render={(routerProps) => (
                 <PublicGameView
+                id={routerProps.match.params.id}
+              />
+            )}/>
+            <Route path='/usergames/:id' render={(routerProps) => (
+                <UserGameView
+                id={routerProps.match.params.id}
+              />
+            )}/>
+            <Route path='/usergames/:id/newelement' render={(routerProps) => (
+                <NewElement
                 id={routerProps.match.params.id}
               />
             )}/>
             <Route path='/publicelements/:id' render={(routerProps) => (
                 <PublicElementView
+                id={routerProps.match.params.id}
+              />
+            )}/>
+            <Route path='/userelements/:id' render={(routerProps) => (
+                <UserElementView
                 id={routerProps.match.params.id}
               />
             )}/>

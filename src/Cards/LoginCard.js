@@ -1,12 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { createStore } from 'redux'
-import { Provider, connect } from 'react-redux'
+import { connect } from 'react-redux'
 import { fetchUser } from '../actions'
 import '../index.css';
-import App from '../App';
-import rootReducer from '../reducer'
-import { Routes, Switch, Link } from 'react-router-dom'
+
 
 
 class LoginCard extends React.Component {

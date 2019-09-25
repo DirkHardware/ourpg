@@ -1,8 +1,5 @@
 import React from 'react';
-import logo from '../logo.svg';
-import { Route, Switch, Link } from 'react-router-dom'
 import '../App.css';
-import Redux from 'redux';
 import { connect } from 'react-redux';
 import FrontPageGamesContainer from '../Containers/FrontPageGamesContainer'
 

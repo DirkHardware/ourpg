@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { fetchElement } from '../actions'
 import '../index.css';
 
-class PublicElementView extends React.Component {
+class UserElementView extends React.Component {
 
     componentDidMount() {
         this.props.fetchElement()
@@ -21,6 +21,10 @@ class PublicElementView extends React.Component {
             )
         }
         else {
+            // console.log('public element view game elements', this.props.gameElements)
+            // check = (props) => {
+            //     console.log(props.gameElements.findIndex(nextPage(props.selectedElement.order)));
+            // }
             return (
             <div>
                 <h2>Title: {this.props.selectedElement.title}</h2>
@@ -54,4 +58,4 @@ function mdp(dispatch, props){
     return({fetchElement: fetchElement(dispatch, id)})
 }
 
-export default connect(msp, mdp)(PublicElementView)
+export default connect(msp, mdp)(UserElementView)
