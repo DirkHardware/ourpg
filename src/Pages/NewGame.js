@@ -3,29 +3,14 @@ import { connect } from 'react-redux'
 import { fetchElement } from '../actions'
 import '../index.css';
 
-class NewElement extends React.Component {
+class NewGame extends React.Component {
 
     state = {
         title: '',
         description: '',
-        content: '',
-        game_id: this.props.id,
-        gameElementsLength: 0
+        published: false,
+        user_id: this.props.id
     }
-
-    // lets worry about this later
-    // componentDidMount(){
-    //     if (this.state.gameElements === []){
-    //         fetch(`http://localhost:3000/games/${this.props.id}`)
-    //         .then(resp => resp.json())
-    //         .then(data => this.setState({gameElementsLength: data}))
-    //         .then(console.log('done fetching!', this.state.gameElements.length))
-    //     }
-    //     else {
-    //         this.setState({gameElementsLength: this.props.gameElements.length})
-    //     }
-    //     console.log('the number of elements in this game is', this.state.gameElementsLength)
-    // }
 
     handleChange = e => {
         this.setState({ [e.target.name]: e.target.value });
@@ -33,15 +18,15 @@ class NewElement extends React.Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        let newElement = {title: this.state.title, description: this.state.description, kind: 'text', content: this.state.content, order: 999, game_id: this.props.id}
-        console.log(newElement);
-        fetch("http://localhost:3000/elements", {
+        let newGame = {title: this.state.title, description: this.state.description, published: this.state.published, user_id: this.props.id}
+        console.log(newGame);
+        fetch("http://localhost:3000/games", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
                 Accepts: "application/json"
             },
-            body: JSON.stringify(newElement)
+            body: JSON.stringify(newGame)
         })
             .then(resp => resp.json())
         //     .then(json => {
@@ -50,17 +35,15 @@ class NewElement extends React.Component {
     };
 
     render() {
-        console.log('the number of elements in this game is:', this.props.gameElements.length)
+        console.log('the id of this game is', this.props.id)
         return (
           <div>
-            <h1>New Element</h1>
+            <h1>Game</h1>
             <form onSubmit={this.handleSubmit}>
               <label>Title: </label>
               <input type="text" name="title" value={this.state.title} onChange={this.handleChange}/>
               <label>Description: </label>
               <input type="text" name="description" value={this.state.description} onChange={this.handleChange}/>
-              <label>Content</label>
-              <input type="text" name="content" value={this.state.content} onChange={this.handleChange}/>
               <button>Create</button>
             </form>
           </div>
@@ -79,4 +62,4 @@ function mdp(dispatch, props){
     return({fetchElement: fetchElement(dispatch, id)})
 }
 
-export default connect(msp, mdp)(NewElement)
+export default connect(msp, mdp)(NewGame)

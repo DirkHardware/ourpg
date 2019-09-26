@@ -1,4 +1,8 @@
+// function updateNewElementProps(dispatch, title, description, content) {
+//     return function() {
 
+//     }
+// }
 
 function fetchPublicGames(dispatch) {
     return function () {

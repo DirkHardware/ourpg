@@ -3,8 +3,7 @@ import { connect } from 'react-redux'
 import { fetchGameElements } from '../actions'
 import { Link } from 'react-router-dom'
 import '../index.css';
-import rootReducer from '../reducer'
-import UserElementCard from '../Cards/PublicElementCard'
+import UserElementCard from '../Cards/UserElementCard'
 
 class UserGameView extends React.Component {
 
@@ -14,11 +13,14 @@ class UserGameView extends React.Component {
     }
 
     render() {
+        let linkString= `/usergames/${this.props.id}/newelement`
         if(this.props.gameElements.length === 0) {
             return(
                 <div className='user-game-no-elements'>
                     <h1>This game has no elements (yet)!</h1>
-                    <button>New Element</button>
+                    <Link to={linkString}>
+                        <button>New Element</button>
+                    </Link>
                 </div>
             )
         }
@@ -30,7 +32,6 @@ class UserGameView extends React.Component {
                 title = {game.title}
                 description = {game.description}
             />)
-        let linkString= `/usergames/${this.props.id}/newelement`
         return (
             <div className='user-game-view'>
                 <h2>{elementComponents} </h2>

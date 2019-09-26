@@ -9,6 +9,7 @@ import PublicGameView from './Pages/PublicGameView'
 import PublicElementView from './Pages/PublicElementView'
 import Login from './Pages/Login'
 import NewElement from './Pages/NewElement'
+import NewGame from './Pages/NewGame'
 import UserHome from './Pages/UserHome'
 import UserGameView from './Pages/UserGameView'
 import UserElementView from './Pages/UserElementView'
@@ -29,6 +30,11 @@ class App extends React.Component {
             <Route path="/home" render={() =>
               <Welcome/>
             }/>
+            <Route path='/usergames/:id/newgame' render={(routerProps) => (
+                <NewGame
+                id={routerProps.match.params.id}
+              />
+            )}/>
             <Route path='/userhome/:id' render={(routerProps) =>
               <UserHome
               id={routerProps.match.params.id}
@@ -42,13 +48,13 @@ class App extends React.Component {
                 id={routerProps.match.params.id}
               />
             )}/>
-            <Route path='/usergames/:id' render={(routerProps) => (
-                <UserGameView
+             <Route path='/usergames/:id/newelement' render={(routerProps) => (
+                <NewElement
                 id={routerProps.match.params.id}
               />
             )}/>
-            <Route path='/usergames/:id/newelement' render={(routerProps) => (
-                <NewElement
+            <Route path='/usergames/:id' render={(routerProps) => (
+                <UserGameView
                 id={routerProps.match.params.id}
               />
             )}/>

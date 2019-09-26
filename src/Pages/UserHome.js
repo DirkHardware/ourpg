@@ -1,14 +1,22 @@
 import React from 'react';
 import '../App.css';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom'
 import UserGamesContainer from '../Containers/UserGamesContainer'
 
 function Welcome(props) {
+    
+    let linkString = `/usergames/${props.id}/newgame`
     return(
         <div>
             <UserGamesContainer
             id = {props.id}
             />
+            <Link to={linkString}>
+                <button>
+                    New Game
+                </button>
+            </Link>
         </div>
     )
 }
