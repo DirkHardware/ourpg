@@ -10,7 +10,7 @@ const PublicGameCard = (props) => {
     return(
         <div className='public-game-card'>
             <Link to={linkString}>
-            <h3>Title: {props.title}</h3>
+            <h3>{props.title}</h3>
             </Link>
             <p>Description: {props.description}</p>
         </div>

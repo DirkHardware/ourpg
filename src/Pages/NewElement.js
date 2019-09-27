@@ -69,7 +69,7 @@ class NewElement extends React.Component {
 }
 
 function msp(state) {   
-    console.log('MSP', state)
+    // console.log('MSP', state)
     return({loggedIn: state.loggedIn, selectedElement: state.selectedElement, gameElements: state.gameElements, selectedGameId: state.selectedGame })
 }
 

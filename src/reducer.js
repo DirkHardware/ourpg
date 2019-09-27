@@ -43,6 +43,15 @@ function handleElements(state = defaultState.selectedElement, action) {
     }
 }
 
+function handleGame(state = defaultState.selectedGame, action) {
+    switch (action.type){
+        case "FETCH GAME":
+            return action.payload
+        default: 
+            return state
+    }
+}
+
 function handleGameElements(state = defaultState.selectedGameElements, action) {
     switch (action.type){
         case "FETCH GAME ELEMENTS":
@@ -74,6 +83,7 @@ const rootReducer = combineReducers({
     loggedIn: handleLogOut,
     frontPageGames: handleFrontPageGames,
     selectedElement: handleElements,
+    selectedGame: handleGame,
     gameElements: handleGameElements,
     currentUser: handleUser,
     userGames: handleUserGames

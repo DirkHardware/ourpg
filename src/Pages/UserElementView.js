@@ -31,11 +31,16 @@ class UserElementView extends React.Component {
             )
         }
         else if(this.props.selectedElement && this.state.editClicked === true) {
+            console.log('the game id of this element is:', this.props.selectedElement.game_id)
             return(
                 <EditElementContainer
                     title = {this.props.selectedElement.title}
                     description = {this.props.selectedElement.description}
-                    content = {this.props.selectedElement.description}
+                    content = {this.props.selectedElement.content}
+                    order = {this.props.selectedElement.order}
+                    kind = {this.props.selectedElement.kind}
+                    game_id = {this.props.selectedElement.game_id}
+                    element_id = {this.props.id}
                 />
             )
         }
@@ -77,7 +82,7 @@ function msp(state) {
 
 function mdp(dispatch, props){
     let id = props.id
-    console.log('the id in PublicElenent View is', id)
+    console.log('the id in PublicElement View is', id)
     return({fetchElement: fetchElement(dispatch, id)})
 }
 
