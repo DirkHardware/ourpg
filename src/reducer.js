@@ -5,6 +5,7 @@ import { combineReducers, bindActionCreators } from 'redux'
 let defaultState = {
     loggedIn: false,
     currentUser: null,
+    editClicked: false,
     frontPageGames: [],
     userGames: [],
     selectedGame: null,
@@ -13,6 +14,12 @@ let defaultState = {
     // selectedElementContent: '',
     userRolls: '',  
 }
+
+// function handleEditClick(state = defaultState.editClicked, action){
+//     switch (action.type){
+//         case "CLICK BUTTON"
+//     }
+// }
 
 function handleLogOut(state = defaultState.loggedIn, action) {
     switch (action.type) {
