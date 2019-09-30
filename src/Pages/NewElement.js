@@ -44,9 +44,9 @@ class NewElement extends React.Component {
             body: JSON.stringify(newElement)
         })
             .then(resp => resp.json())
-        //     .then(json => {
-        //     this.context.history.push(`/usergames/${json.id}`);
-        // });
+            .then(json => {
+                this.props.history.push(`/usergames/${this.props.id}`);
+            });
     };
 
     render() {

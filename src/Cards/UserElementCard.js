@@ -15,7 +15,8 @@ class UserElementCard extends React.Component {
             method: "DELETE",
         })
             .then(resp => resp.json())
-            .then(this.props.history.push(`/usergames/${this.state.game_id}`)
+            .then(console.log(this.props.id))
+            .then(this.props.history.push(`/usergames/${this.props.game_id}`)
             )
             // .then(this.props.fetchGameElements())
     };

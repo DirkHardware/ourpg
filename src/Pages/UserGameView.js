@@ -99,12 +99,13 @@ class UserGameView extends React.Component {
         console.log('selected game is', this.props.selectedGame)
         console.log(this.props.gameElements)
         let elementComponents = this.props.gameElements.map(
-            game => <UserElementCard
+            element => <UserElementCard
                 history = {this.props.history}
                 gameElements = {this.props.gameElements}
-                id = {game.id}
-                title = {game.title}
-                description = {game.description}
+                game_id = {this.props.id}
+                id = {element.id}
+                title = {element.title}
+                description = {element.description}
             />)
         return (
             <div className='user-game-view'>
