@@ -11,16 +11,15 @@ class NavBar extends React.Component {
 
 
     render() {
-        let userHomeString = `/userhome/${this.state.currentUser.id}`
         // console.log('navbar', this.state.currentUser)
         if (!this.state.currentUser) {
             return(
                 <div className='Nav-bar'>
                     <p>New Game</p>
                     <p>View Games</p>
-                    <p>Search Games</p>
+                    {/* <p>Search Games</p>
                     <p>Dice Roller</p>
-                    <p>Probability Calculator</p>
+                    <p>Probability Calculator</p> */}
                     <Link to='/login'>
                     <p>Log In</p>
                     </Link>
@@ -31,6 +30,7 @@ class NavBar extends React.Component {
                 </div>
             )
         } else {
+    let userHomeString = `/userhome/${this.state.currentUser.id}`
     return (
         <div className='Nav-bar'>
                     <p>New Game</p>
@@ -38,9 +38,9 @@ class NavBar extends React.Component {
                     <p>My Games</p>
                     </Link>
                     <p>View Games</p>
-                    <p>Search Games</p>
+                    {/* <p>Search Games</p>
                     <p>Dice Roller</p>
-                    <p>Probability Calculator</p>
+                    <p>Probability Calculator</p> */}
                     <Link to='/login'>
                     <p>Log Out</p>
                     </Link>
