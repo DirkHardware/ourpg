@@ -15,16 +15,10 @@ class UserElementCard extends React.Component {
             method: "DELETE",
         })
             .then(resp => resp.json())
-            .then(this.renderRedirect())
+            .then(this.props.history.push(`/usergames/${this.state.game_id}`)
+            )
             // .then(this.props.fetchGameElements())
     };
-
-    renderRedirect = () => {
-        console.log('redirecting')
-        console.log(this.selectedGame.id)
-        let linkString = `http://localhost:30001/usergames/${this.props.selectedGame.id}`
-        window.location.replace({linkString});
-    }
 
     render() {
         let linkString = `/userelements/${this.props.id}`

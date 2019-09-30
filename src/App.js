@@ -55,6 +55,7 @@ class App extends React.Component {
             )}/>
             <Route path='/usergames/:id' render={(routerProps) => (
                 <UserGameView
+                history = {routerProps.history}
                 id={routerProps.match.params.id}
               />
             )}/>
@@ -63,11 +64,13 @@ class App extends React.Component {
                 id={routerProps.match.params.id}
               />
             )}/>
-            <Route path='/userelements/:id' render={(routerProps) => (
-                <UserElementView
+            <Route path='/userelements/:id' render={(routerProps) => {
+              console.log(routerProps);
+              return <UserElementView
+                history = {routerProps.history}
                 id={routerProps.match.params.id}
               />
-            )}/>
+            }}/>
           </Switch>
          </Router>
        </div>

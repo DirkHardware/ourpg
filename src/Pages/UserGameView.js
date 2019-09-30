@@ -85,7 +85,7 @@ class UserGameView extends React.Component {
 
     render() {
         let linkString= `/usergames/${this.props.id}/newelement`
-        if(this.props.gameElements.length === 0) {
+        if(!this.props.gameElements) {
             return(
                 <div className='user-game-no-elements'>
                     <h1>This game has no elements (yet)!</h1>
@@ -97,8 +97,10 @@ class UserGameView extends React.Component {
         }
         // console.log('game elements:', this.props.gameElements)
         console.log('selected game is', this.props.selectedGame)
+        console.log(this.props.gameElements)
         let elementComponents = this.props.gameElements.map(
             game => <UserElementCard
+                history = {this.props.history}
                 gameElements = {this.props.gameElements}
                 id = {game.id}
                 title = {game.title}

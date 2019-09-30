@@ -34,6 +34,7 @@ class UserElementView extends React.Component {
             console.log('the game id of this element is:', this.props.selectedElement.game_id)
             return(
                 <EditElementContainer
+                    history = {this.props.history}
                     title = {this.props.selectedElement.title}
                     description = {this.props.selectedElement.description}
                     content = {this.props.selectedElement.content}

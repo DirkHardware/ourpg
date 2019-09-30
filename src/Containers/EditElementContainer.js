@@ -29,9 +29,9 @@ class EditElementContainer extends React.Component {
             body: JSON.stringify(editedElement)
         })
             .then(resp => resp.json())
-        //     .then(json => {
-        //     this.context.history.push(`/usergames/${json.id}`);
-        // });
+            .then(json => {
+                this.props.history.push(`/usergames/${this.state.game_id}`);
+            });
     };
 
     render(){
