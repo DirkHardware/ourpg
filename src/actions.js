@@ -1,9 +1,3 @@
-// function updateNewElementProps(dispatch, title, description, content) {
-//     return function() {
-
-//     }
-// }
-
 function fetchPublicGames(dispatch) {
     return function () {
         fetch("http://localhost:3000/games/all_games_published") 

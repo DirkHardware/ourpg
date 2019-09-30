@@ -4,6 +4,9 @@ import { fetchGameElements, fetchGame } from '../actions'
 import { Link } from 'react-router-dom'
 import '../index.css';
 import UserElementCard from '../Cards/UserElementCard'
+import pdfMake from "pdfmake/build/pdfmake";
+import pdfFonts from "pdfmake/build/vfs_fonts";
+pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 class UserGameView extends React.Component {
 
@@ -11,6 +14,26 @@ class UserGameView extends React.Component {
         // fire off dispatch to send my fetch request 
         this.props.fetchGameElements()
         this.props.fetchGame()
+    }
+
+    print = elements => {
+        let i;
+        let contentArray = []
+        for(i = 0; i < elements.length; i++){
+          contentArray.push({
+            text: elements[i].title,
+            style: 'header'
+          })
+          contentArray.push('        ')
+          contentArray.push(elements[i].content)
+          contentArray.push('        ')
+        };
+        let docDefinition = {content: contentArray, styles: { header: {
+          fontSize: 18,
+          bold: true
+        }}};
+        console.log(docDefinition)
+        pdfMake.createPdf(docDefinition).download();
     }
 
     handleSubmit = e => {
@@ -91,6 +114,7 @@ class UserGameView extends React.Component {
                 {/* remember that you can add 'checked=true' to a checkbox to have it checked by default, you 
                 will wanter to set this to conditionally render based on published state later on */}
                 {/* Published: <input type="checkbox" id='publish-checkbox' onClick='publish'/> */}
+                <button onClick={() => this.print(this.props.gameElements)}>Export</button>
             </div>
         )
     }
