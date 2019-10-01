@@ -49,13 +49,15 @@ class EditElementContainer extends React.Component {
                             <div className='element-edit-description'>
                                 <label>Description: </label>
                                 <div className='edit-element-description-input'>
-                                    <input type="text" name="description" value={this.state.description} onChange={this.handleChange}/>
+                                    <textarea rows='4' cols='100' name='description' value={this.state.description} onChange={this.handleChange}>
+                                    </textarea>
                                 </div>
                             </div>
                             <div className='element-edit-content'>
                                 <label>Content</label>
-                                <div className='edit-element-content-input'>
-                                <input type="text" name="content" value={this.state.content} onChange={this.handleChange}/>
+                                <div className='element-edit-content-input'>
+                                    <textarea rows='60' cols='100' name='content' value= {this.state.content} onChange={this.handleChange}>
+                                    </textarea>
                                 </div>
                             </div>
                             <div className='element-edit-button'>

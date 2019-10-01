@@ -41,6 +41,10 @@
   flex-direction: column; 
 }
 
+/* .edit-element-content-input {
+} */
+
+
 .front-page-game-container {
   display: flex;
   flex-direction: column;

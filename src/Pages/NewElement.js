@@ -55,14 +55,32 @@ class NewElement extends React.Component {
           <div>
             <h1>New Element</h1>
             <form onSubmit={this.handleSubmit}>
-              <label>Title: </label>
-              <input type="text" name="title" value={this.state.title} onChange={this.handleChange}/>
-              <label>Description: </label>
-              <input type="text" name="description" value={this.state.description} onChange={this.handleChange}/>
-              <label>Content</label>
-              <input type="text" name="content" value={this.state.content} onChange={this.handleChange}/>
-              <button>Create</button>
-            </form>
+                        <div className='element-new-form-components'>
+                            <div className='element-new-title'>
+                                <label>Title</label>
+                                <div className='element-new-title-input'>
+                                    <input type="text" name="title" value={this.state.title} onChange={this.handleChange}/>
+                                </div>
+                            </div>
+                            <div className='element-new-description'>
+                                <label>Description: </label>
+                                <div className='edit-element-description-input'>
+                                    <textarea rows='4' cols='100' name='description' value={this.state.description} onChange={this.handleChange}>
+                                    </textarea>
+                                </div>
+                            </div>
+                            <div className='element-new-content'>
+                                <label>Content</label>
+                                <div className='element-new-content-input'>
+                                    <textarea rows='60' cols='100' name='content' value= {this.state.content} onChange={this.handleChange}>
+                                    </textarea>
+                                </div>
+                            </div>
+                            <div className='element-new-button'>
+                                <button>Commit Change</button>
+                            </div>
+                        </div>
+                    </form>
           </div>
         )
     }
