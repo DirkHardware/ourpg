@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { fetchGameElements } from '../actions'
+import { fetchGame, fetchGameElements } from '../actions'
 import '../index.css';
 import PublicElementCard from '../Cards/PublicElementCard'
 import pdfMake from "pdfmake/build/pdfmake";
@@ -12,6 +12,7 @@ class PublicGameView extends React.Component {
     componentDidMount() {
         // fire off dispatch to send my fetch request 
         this.props.fetchGameElements()
+        this.props.fetchGame()
     }
 
     print = elements => {
@@ -35,7 +36,7 @@ class PublicGameView extends React.Component {
     }
 
     render() {
-        if(this.props.gameElements.length === 0) {
+        if(!this.props.gameElements || !this.props.selectedGame) {
             return(
                 <h1>This game has no elements (yet)!</h1>
             )
@@ -50,6 +51,7 @@ class PublicGameView extends React.Component {
             />)
         return (
             <div className='public-elements-container'>
+                <h1>{this.props.selectedGame.title}</h1>
                  <button onClick={() => this.print(this.props.gameElements)}>Export</button>
                 {elementComponents}
             </div>
@@ -58,12 +60,12 @@ class PublicGameView extends React.Component {
 }
 
 function msp(state){
-    return({loggedIn: state.loggedIn, gameElements: state.gameElements})
+    return({loggedIn: state.loggedIn, selectedGame: state.selectedGame, gameElements: state.gameElements})
 }
 
 function mdp(dispatch, props){
     let id = props.id
-    return({fetchGameElements: fetchGameElements(dispatch, id)})
+    return({fetchGame: fetchGame(dispatch, id), fetchGameElements: fetchGameElements(dispatch, id)})
 }
 
 export default connect(msp, mdp)(PublicGameView)

@@ -85,7 +85,7 @@ class UserGameView extends React.Component {
 
     render() {
         let linkString= `/usergames/${this.props.id}/newelement`
-        if(!this.props.gameElements) {
+        if(!this.props.gameElements || !this.props.selectedGame) {
             return(
                 <div className='user-game-no-elements'>
                     <h1>This game has no elements (yet)!</h1>
@@ -109,14 +109,15 @@ class UserGameView extends React.Component {
             />)
         return (
             <div className='user-game-view'>
-                <Link to={linkString} >
+                <h1>{this.props.selectedGame.title}</h1>
+                <Link to={linkString}>
                 <button>New Element</button>
+                </Link>
                 <button onClick={this.handlePublish}>Publish</button>
                 {/* remember that you can add 'checked=true' to a checkbox to have it checked by default, you 
                 will wanter to set this to conditionally render based on published state later on */}
                 {/* Published: <input type="checkbox" id='publish-checkbox' onClick='publish'/> */}
                 <button onClick={() => this.print(this.props.gameElements)}>Export</button>
-                </Link>
                 <div className='user-elements-container'>
                     {elementComponents}
                 </div>
