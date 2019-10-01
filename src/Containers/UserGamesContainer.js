@@ -15,7 +15,7 @@ class UserGamesContainer extends React.Component {
     render() {
         if(!this.props.userGames.length) {
             return(
-                <h1>{this.props.id}</h1>
+                <h1>Loading</h1>
             )
         }
         let userGamesComponents = this.props.userGames.map(

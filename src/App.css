@@ -51,10 +51,6 @@
   display: inline-block;
   margin-left: 2em;
   margin-right: 2em;
-  /* display: flex;
-  align-items: left;
-  justify-items: left;
-  flex-direction: column; */
 }
 
 .public-game-card-title {
@@ -125,10 +121,6 @@
   display: inline-block;
   margin-left: 2em;
   margin-right: 2em;
-  /* display: flex;
-  align-items: left;
-  justify-items: left;
-  flex-direction: column; */
 }
 
 .user-game-card-title {
@@ -164,10 +156,6 @@
   display: inline-block;
   margin-left: 2em;
   margin-right: 2em;
-  /* display: flex;
-  align-items: left;
-  justify-items: left;
-  flex-direction: column; */
 }
 
 .user-element-card-title {

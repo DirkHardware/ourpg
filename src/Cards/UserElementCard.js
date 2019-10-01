@@ -31,7 +31,7 @@ class UserElementCard extends React.Component {
                         <h3>{this.props.title}</h3>
                         </Link>
                     </div>
-                    <div className='user-element-description'>
+                    <div className='user-element-card-description'>
                         <p>{this.props.description}</p>
                         {/* <button onClick={this.handleClick}>Delete</button> */}
                     </div>
