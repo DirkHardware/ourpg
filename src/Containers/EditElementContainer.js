@@ -7,7 +7,6 @@ class EditElementContainer extends React.Component {
         description: this.props.description,
         content: this.props.content,
         game_id: this.props.game_id,
-        // element_id: this.props.element_id,
         order: this.props.order,
         kind: this.props.kind
     }
@@ -38,15 +37,33 @@ class EditElementContainer extends React.Component {
         return(
             <div className='edit-container'>
                 <p>{this.props.title}</p>
-                <form onSubmit={this.handleSubmit}>
-                    <label>Title</label>
-                    <input type="text" name="title" value={this.state.title} onChange={this.handleChange}/>
-                    <label>Description: </label>
-                    <input type="text" name="description" value={this.state.description} onChange={this.handleChange}/>
-                    <label>Content</label>
-                    <input type="text" name="content" value={this.state.content} onChange={this.handleChange}/>
-                    <button>Commit Change</button>
-                </form>
+                <div className='element-edit-form'>
+                    <form onSubmit={this.handleSubmit}>
+                        <div className='element-edit-form-components'>
+                            <div className='element-edit-title'>
+                                <label>Title</label>
+                                <div className='element-edit-title-input'>
+                                    <input type="text" name="title" value={this.state.title} onChange={this.handleChange}/>
+                                </div>
+                            </div>
+                            <div className='element-edit-description'>
+                                <label>Description: </label>
+                                <div className='edit-element-description-input'>
+                                    <input type="text" name="description" value={this.state.description} onChange={this.handleChange}/>
+                                </div>
+                            </div>
+                            <div className='element-edit-content'>
+                                <label>Content</label>
+                                <div className='edit-element-content-input'>
+                                <input type="text" name="content" value={this.state.content} onChange={this.handleChange}/>
+                                </div>
+                            </div>
+                            <div className='element-edit-button'>
+                                <button>Commit Change</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
     )}
 }

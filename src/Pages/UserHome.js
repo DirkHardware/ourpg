@@ -9,11 +9,6 @@ function Welcome(props) {
     let linkString = `/usergames/${props.id}/newgame`
     return(
         <div>
-            <Link to={linkString}>
-                <button>
-                    New Game
-                </button>
-            </Link>
             <UserGamesContainer
             id = {props.id}
             />

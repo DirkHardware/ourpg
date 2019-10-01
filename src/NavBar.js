@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import './App.css';
-import Redux from 'redux';
-import { connect } from 'react-redux';
 
 class NavBar extends React.Component {
     state = {
@@ -15,7 +13,6 @@ class NavBar extends React.Component {
         if (!this.state.currentUser) {
             return(
                 <div className='nav-bar'>
-                    <p>New Game</p>
                     <p>View Games</p>
                     {/* <p>Search Games</p>
                     <p>Dice Roller</p>
@@ -37,7 +34,6 @@ class NavBar extends React.Component {
     let userHomeString = `/userhome/${this.state.currentUser.id}`
     return (
         <div className='nav-bar'>
-                    <p>New Game</p>
                     <Link to={userHomeString}>
                     <p>My Games</p>
                     </Link>

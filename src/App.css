@@ -30,6 +30,17 @@
   flex-direction: row;
 }
 
+.element-edit-form {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+}
+
+.element-edit-form-components {
+  display: flex;
+  flex-direction: column; 
+}
+
 .front-page-game-container {
   display: flex;
   flex-direction: column;

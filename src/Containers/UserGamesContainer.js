@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 import { fetchUserGames } from '../actions'
 import '../index.css';
 import UserGameCard from '../Cards/UserGameCard'
@@ -18,6 +19,7 @@ class UserGamesContainer extends React.Component {
                 <h1>Loading</h1>
             )
         }
+        let linkString = `/usergames/${this.props.id}/newgame`
         let userGamesComponents = this.props.userGames.map(
             game => <UserGameCard
                 id = {game.id}
@@ -27,6 +29,11 @@ class UserGamesContainer extends React.Component {
         return (
             <div className='user-games-container'>
                 <h2>Here are your games!</h2>
+                <Link to={linkString}>
+                    <button>
+                        New Game
+                    </button>
+                </Link>
                 {userGamesComponents}
             </div>
         )
