@@ -25,9 +25,51 @@
 
 .nav-bar {
   display: flex; 
-  justify-content: center;
+  justify-content: left;
   align-content: space-between;
   flex-direction: row;
+  margin-left: 25%;
+}
+
+.home {
+  margin: 10px;
+}
+
+.my-games{
+  margin: 10px;
+}
+
+.logout{
+  margin: 10px;
+}
+
+.login{
+  margin: 10px;
+}
+
+/* .public-element-view-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+} */
+
+.public-element-view-content {
+  width: 50%;
+  display: flex;
+  margin-left: 25%;
+  align-content: center;
+  justify-content: center;
+  text-align: left
+}
+
+.user-element-view-content {
+  width: 50%;
+  display: flex;
+  margin-left: 25%;
+  align-content: center;
+  justify-content: center;
+  text-align: left
 }
 
 .element-edit-form {

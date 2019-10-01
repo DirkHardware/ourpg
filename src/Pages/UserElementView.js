@@ -52,13 +52,17 @@ class UserElementView extends React.Component {
             // }
             return (
             <div>
+            <div className='user-element-view-container'>
                 <h2>Title: {this.props.selectedElement.title}</h2>
-                <p>{this.props.selectedElement.content}</p>
-                <h4>Page: {this.props.selectedElement.order}</h4>
                 <button onClick={() => {
                     this.setState({editClicked: !this.state.editClicked})
-                    console.log('edit button clicked! Current editClick state is:', this.state.editClicked)
+                    // console.log('edit button clicked! Current editClick state is:', this.state.editClicked)
                 }}>Edit</button>
+                <div className='user-element-view-content'>
+                    <p>{this.props.selectedElement.content}</p>
+                </div>
+                <h4>Page: {this.props.selectedElement.order}</h4>
+            </div>
             </div>
         )
         }

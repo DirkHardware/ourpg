@@ -13,20 +13,13 @@ class NavBar extends React.Component {
         if (!this.state.currentUser) {
             return(
                 <div className='nav-bar'>
-                    <p>View Games</p>
-                    {/* <p>Search Games</p>
-                    <p>Dice Roller</p>
-                    <p>Probability Calculator</p> */}
-                    <Link to='/login'>
-                    <p>Log In</p>
-                    </Link>
-                    <p>SignUp</p>
+                    <p className='sign-up'>Sign Up</p>
                     <Link to='/home'>
-                    <p>Home</p>
+                    <p className='home'>Home</p>
                     </Link>
                     <p>SignUp</p>
                     <Link to='/login'>
-                    <button>Log In</button>
+                    <p className='login'>Log In</p>
                     </Link>
                 </div>
             )
@@ -35,17 +28,13 @@ class NavBar extends React.Component {
     return (
         <div className='nav-bar'>
                     <Link to={userHomeString}>
-                    <p>My Games</p>
+                    <p className='my-games'>My Games</p>
                     </Link>
-                    <p>View Games</p>
-                    {/* <p>Search Games</p>
-                    <p>Dice Roller</p>
-                    <p>Probability Calculator</p> */}
                     <Link to='/home'>
-                    <p>Home</p>
+                    <p className='home'>Home</p>
                     </Link>
                     {/* <Link to='/login'> */}
-                    <button onClick={()=> localStorage.clear()}>Log Out</button>
+                    <p className='logout' onClick={()=> localStorage.clear()}>Log Out</p>
                     {/* </Link> */}
                 </div>
     )}
