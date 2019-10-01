@@ -27,6 +27,10 @@ class NavBar extends React.Component {
                     <Link to='/home'>
                     <p>Home</p>
                     </Link>
+                    <p>SignUp</p>
+                    <Link to='/login'>
+                    <button>Log In</button>
+                    </Link>
                 </div>
             )
         } else {
@@ -41,13 +45,12 @@ class NavBar extends React.Component {
                     {/* <p>Search Games</p>
                     <p>Dice Roller</p>
                     <p>Probability Calculator</p> */}
-                    <Link to='/login'>
-                    <p>Log Out</p>
-                    </Link>
-                    <p>SignUp</p>
                     <Link to='/home'>
                     <p>Home</p>
                     </Link>
+                    {/* <Link to='/login'> */}
+                    <button onClick={()=> localStorage.clear()}>Log Out</button>
+                    {/* </Link> */}
                 </div>
     )}
     }
