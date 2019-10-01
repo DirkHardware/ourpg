@@ -14,7 +14,7 @@ class NavBar extends React.Component {
         // console.log('navbar', this.state.currentUser)
         if (!this.state.currentUser) {
             return(
-                <div className='Nav-bar'>
+                <div className='nav-bar'>
                     <p>New Game</p>
                     <p>View Games</p>
                     {/* <p>Search Games</p>
@@ -36,7 +36,7 @@ class NavBar extends React.Component {
         } else {
     let userHomeString = `/userhome/${this.state.currentUser.id}`
     return (
-        <div className='Nav-bar'>
+        <div className='nav-bar'>
                     <p>New Game</p>
                     <Link to={userHomeString}>
                     <p>My Games</p>

@@ -9,10 +9,16 @@ const PublicGameCard = (props) => {
 
     return(
         <div className='public-game-card'>
-            <Link to={linkString}>
-            <h3>{props.title}</h3>
-            </Link>
-            <p>Description: {props.description}</p>
+            <div className='public-game-card-text'>
+                <div className='public-game-card-title'>
+                    <Link to={linkString}>
+                    <h3>{props.title}</h3>
+                    </Link>
+                </div>
+                <div className='public-game-card-description'>
+                    <p>Description: {props.description}</p>
+                </div>
+            </div>
         </div>
     )
 }

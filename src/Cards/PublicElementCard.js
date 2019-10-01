@@ -19,7 +19,7 @@ const PublicElementCard = (props) => {
         //     )
         // }
         return(
-            <div>
+            <div className='public-element-card'>
                 <Link to={linkString}>
                 <h3>Title: {props.title}</h3>
                 </Link>

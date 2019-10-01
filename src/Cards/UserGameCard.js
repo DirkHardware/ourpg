@@ -9,10 +9,12 @@ const UserGameCard = (props) => {
 
     return(
         <div className='user-game-card'>
+            <div className='user-game-card-text'>
             <Link to={linkString}>
-            <h3>{props.title}</h3>
+            <h3 className='user-game-card-title'>{props.title}:</h3>
             </Link>
-            <p>Description: {props.description}</p>
+            <p className='user-game-card-description'>{props.description}</p>
+            </div>
         </div>
     )
 }

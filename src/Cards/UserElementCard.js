@@ -24,12 +24,18 @@ class UserElementCard extends React.Component {
     render() {
         let linkString = `/userelements/${this.props.id}`
         return(
-            <div>
-                <Link to={linkString}>
-                <h3>Title: {this.props.title}</h3>
-                </Link>
-                <p>Description: {this.props.description}</p>
-                <button onClick={this.handleClick}>Delete</button>
+            <div className='user-element-card'>
+                <div className='user-element-card-text'>
+                    <div className='user-element-card-title'>
+                        <Link to={linkString}>
+                        <h3>Title: {this.props.title}</h3>
+                        </Link>
+                    </div>
+                    <div className='user-element-description'>
+                        <p>Description: {this.props.description}</p>
+                        {/* <button onClick={this.handleClick}>Delete</button> */}
+                    </div>
+                </div>
             </div>
         )
     }

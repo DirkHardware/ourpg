@@ -23,8 +23,89 @@
   color: #61dafb;
 }
 
-.Nav-bar {
+.nav-bar {
+  display: flex; 
+  justify-content: center;
+  align-content: space-between;
   flex-direction: row;
+}
+
+.front-page-game-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.public-game-card {
+  display: flex;
+  justify-content: center;
+  border: 1px solid black;
+  width: 50%;
+  text-align: center;
+}
+
+.public-game-card-text {
+  width: 100%;
+  display: inline-block;
+  margin-left: 2em;
+  margin-right: 2em;
+  /* display: flex;
+  align-items: left;
+  justify-items: left;
+  flex-direction: column; */
+}
+
+.public-game-card-title {
+  display: flex;
+  align-items: left;
+}
+
+.public-game-card-description {
+  display: flex;
+  justify-content: left;
+  text-align: left;
+  align-self: left;
+}
+
+.user-games-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.user-game-card {
+  display: flex;
+  justify-content: center;
+  border: 1px solid black;
+  width: 50%;
+  text-align: center;
+}
+
+.user-game-card-text {
+  width: 100%;
+  display: inline-block;
+  margin-left: 2em;
+  margin-right: 2em;
+  /* display: flex;
+  align-items: left;
+  justify-items: left;
+  flex-direction: column; */
+}
+
+.user-game-card-title {
+  display: flex;
+  align-items: left;
+}
+
+.user-game-card-description {
+  display: flex;
+  justify-content: left;
+  text-align: left;
+  align-self: left;
 }
 
 @keyframes App-logo-spin {

@@ -25,7 +25,7 @@ class UserGamesContainer extends React.Component {
                 description = {game.description}
             />)
         return (
-            <div name='user-games-container'>
+            <div className='user-games-container'>
                 <h2>Here are your games!</h2>
                 {userGamesComponents}
             </div>
