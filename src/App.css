@@ -69,6 +69,41 @@
   align-self: left;
 }
 
+.public-elements-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.public-element-card {
+  display: flex;
+  justify-content: center;
+  border: 1px solid black;
+  width: 50%;
+  text-align: center;
+}
+
+.public-element-card-text {
+  width: 100%;
+  display: inline-block;
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+.public-element-card-title {
+  display: flex;
+  align-items: left;
+}
+
+.public-element-card-description {
+  display: flex;
+  justify-content: left;
+  text-align: left;
+  align-self: left;
+}
+
 .user-games-container {
   display: flex;
   flex-direction: column;
@@ -102,6 +137,45 @@
 }
 
 .user-game-card-description {
+  display: flex;
+  justify-content: left;
+  text-align: left;
+  align-self: left;
+}
+
+.user-elements-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.user-element-card {
+  display: flex;
+  justify-content: center;
+  border: 1px solid black;
+  width: 50%;
+  text-align: center;
+}
+
+.user-element-card-text {
+  width: 100%;
+  display: inline-block;
+  margin-left: 2em;
+  margin-right: 2em;
+  /* display: flex;
+  align-items: left;
+  justify-items: left;
+  flex-direction: column; */
+}
+
+.user-element-card-title {
+  display: flex;
+  align-items: left;
+}
+
+.user-element-card-description {
   display: flex;
   justify-content: left;
   text-align: left;

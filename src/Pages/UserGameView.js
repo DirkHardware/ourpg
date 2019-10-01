@@ -109,17 +109,17 @@ class UserGameView extends React.Component {
             />)
         return (
             <div className='user-game-view'>
-                <div className='user-element-container'>
-                    <h2>{elementComponents} </h2>
-                    <Link to={linkString} >
-                    <button>New Element</button>
-                    </Link>
-                </div>
+                <Link to={linkString} >
+                <button>New Element</button>
                 <button onClick={this.handlePublish}>Publish</button>
                 {/* remember that you can add 'checked=true' to a checkbox to have it checked by default, you 
                 will wanter to set this to conditionally render based on published state later on */}
                 {/* Published: <input type="checkbox" id='publish-checkbox' onClick='publish'/> */}
                 <button onClick={() => this.print(this.props.gameElements)}>Export</button>
+                </Link>
+                <div className='user-elements-container'>
+                    {elementComponents}
+                </div>
             </div>
         )
     }

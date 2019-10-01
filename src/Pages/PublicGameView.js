@@ -26,8 +26,8 @@ class PublicGameView extends React.Component {
                 description = {game.description}
             />)
         return (
-            <div>
-                <h2>{elementComponents} </h2>
+            <div className='public-elements-container'>
+                {elementComponents}
             </div>
         )
     }

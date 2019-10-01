@@ -20,10 +20,16 @@ const PublicElementCard = (props) => {
         // }
         return(
             <div className='public-element-card'>
-                <Link to={linkString}>
-                <h3>Title: {props.title}</h3>
-                </Link>
-                <p>Description: {props.description}</p>
+                <div className='public-element-card-text'>
+                    <div className='public-element-card-title'>
+                        <Link to={linkString}>
+                        <h3>{props.title}</h3>
+                        </Link>
+                    </div>
+                    <div className='public-element-card-description'>
+                        <p>{props.description}</p>
+                    </div>
+                </div>
             </div>
         )
     }
