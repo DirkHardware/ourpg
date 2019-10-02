@@ -36,32 +36,32 @@ class EditElementContainer extends React.Component {
     render(){
         return(
             <div className='edit-container'>
-                <p>{this.props.title}</p>
                 <div className='element-edit-form'>
                     <form onSubmit={this.handleSubmit}>
                         <div className='element-edit-form-components'>
+                         <p>{this.props.title}</p>
                             <div className='element-edit-title'>
                                 <label>Title</label>
                                 <div className='element-edit-title-input'>
-                                    <input type="text" name="title" value={this.state.title} onChange={this.handleChange}/>
+                                    <input className='input' type="text" name="title" value={this.state.title} onChange={this.handleChange}/>
                                 </div>
                             </div>
                             <div className='element-edit-description'>
                                 <label>Description: </label>
                                 <div className='edit-element-description-input'>
-                                    <textarea rows='4' cols='100' name='description' value={this.state.description} onChange={this.handleChange}>
+                                    <textarea className='text-area' rows='4' cols='100' name='description' value={this.state.description} onChange={this.handleChange}>
                                     </textarea>
                                 </div>
                             </div>
                             <div className='element-edit-content'>
                                 <label>Content</label>
                                 <div className='element-edit-content-input'>
-                                    <textarea rows='60' cols='100' name='content' value= {this.state.content} onChange={this.handleChange}>
+                                    <textarea className='text-area' rows='60' cols='100' name='content' value= {this.state.content} onChange={this.handleChange}>
                                     </textarea>
                                 </div>
                             </div>
                             <div className='element-edit-button'>
-                                <button>Commit Change</button>
+                                <button className='button' >Commit Change</button>
                             </div>
                         </div>
                     </form>

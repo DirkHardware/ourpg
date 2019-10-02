@@ -23,9 +23,9 @@ class PublicElementView extends React.Component {
         else {
             return (
             <div className='public-element-view-container'>
-                <h2>Title: {this.props.selectedElement.title}</h2>
-                <div className='public-element-view-content'>
-                    <p>{this.props.selectedElement.content}</p>
+                <h2 className='element-title'>Title: {this.props.selectedElement.title}</h2>
+                <div className='public-element-view-content-container'>
+                    <p className='public-element-view-content'>{this.props.selectedElement.content}</p>
                 </div>
                 <h4>Page: {this.props.selectedElement.order}</h4>
             </div>

@@ -51,18 +51,17 @@ class UserElementView extends React.Component {
             //     console.log(props.gameElements.findIndex(nextPage(props.selectedElement.order)));
             // }
             return (
-            <div>
             <div className='user-element-view-container'>
-                <h2>Title: {this.props.selectedElement.title}</h2>
-                <button onClick={() => {
-                    this.setState({editClicked: !this.state.editClicked})
-                    // console.log('edit button clicked! Current editClick state is:', this.state.editClicked)
-                }}>Edit</button>
-                <div className='user-element-view-content'>
-                    <p>{this.props.selectedElement.content}</p>
+                <div className='edit-button-container'>
+                    <button className='editbutton' onClick={() => {
+                        this.setState({editClicked: !this.state.editClicked})
+                        // console.log('edit button clicked! Current editClick state is:', this.state.editClicked)
+                    }}>Edit</button>
                 </div>
-                <h4>Page: {this.props.selectedElement.order}</h4>
-            </div>
+                <div className='user-element-view-content-container'>
+                    <h2 className='element-title'>Title: {this.props.selectedElement.title}</h2>
+                    <p className ='user-element-view-content'>{this.props.selectedElement.content}</p>
+                </div>
             </div>
         )
         }

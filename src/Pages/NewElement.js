@@ -53,31 +53,31 @@ class NewElement extends React.Component {
         console.log('the number of elements in this game is:', this.props.gameElements.length)
         return (
           <div>
-            <h1>New Element</h1>
             <form onSubmit={this.handleSubmit}>
                         <div className='element-new-form-components'>
+                            <h1>New Element</h1>
                             <div className='element-new-title'>
                                 <label>Title</label>
                                 <div className='element-new-title-input'>
-                                    <input type="text" name="title" value={this.state.title} onChange={this.handleChange}/>
+                                    <input className='input' type="text" name="title" value={this.state.title} onChange={this.handleChange}/>
                                 </div>
                             </div>
                             <div className='element-new-description'>
                                 <label>Description: </label>
                                 <div className='edit-element-description-input'>
-                                    <textarea rows='4' cols='100' name='description' value={this.state.description} onChange={this.handleChange}>
+                                    <textarea className='text-area' rows='4' cols='100' name='description' value={this.state.description} onChange={this.handleChange}>
                                     </textarea>
                                 </div>
                             </div>
                             <div className='element-new-content'>
                                 <label>Content</label>
                                 <div className='element-new-content-input'>
-                                    <textarea rows='60' cols='100' name='content' value= {this.state.content} onChange={this.handleChange}>
+                                    <textarea className='text-area' rows='60' cols='100' name='content' value= {this.state.content} onChange={this.handleChange}>
                                     </textarea>
                                 </div>
                             </div>
                             <div className='element-new-button'>
-                                <button>Commit Change</button>
+                                <button className='button'>Commit Change</button>
                             </div>
                         </div>
                     </form>

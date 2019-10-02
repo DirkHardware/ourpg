@@ -30,7 +30,7 @@ class UserGamesContainer extends React.Component {
             <div className='user-games-container'>
                 <h2>Here are your games!</h2>
                 <Link to={linkString}>
-                    <button>
+                    <button className='button'>
                         New Game
                     </button>
                 </Link>

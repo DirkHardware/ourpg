@@ -52,7 +52,7 @@ class PublicGameView extends React.Component {
         return (
             <div className='public-elements-container'>
                 <h1>{this.props.selectedGame.title}</h1>
-                 <button onClick={() => this.print(this.props.gameElements)}>Export</button>
+                 <button className='button' onClick={() => this.print(this.props.gameElements)}>Export</button>
                 {elementComponents}
             </div>
         )

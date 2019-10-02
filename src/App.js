@@ -32,6 +32,7 @@ class App extends React.Component {
             }/>
             <Route path='/usergames/:id/newgame' render={(routerProps) => (
                 <NewGame
+                history = {routerProps.history}
                 id={routerProps.match.params.id}
               />
             )}/>

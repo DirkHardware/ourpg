@@ -44,7 +44,7 @@ class NewGame extends React.Component {
               <input type="text" name="title" value={this.state.title} onChange={this.handleChange}/>
               <label>Description: </label>
               <input type="text" name="description" value={this.state.description} onChange={this.handleChange}/>
-              <button>Create</button>
+              <button className='button'>Create</button>
             </form>
           </div>
         )
