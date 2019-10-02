@@ -93,6 +93,9 @@
   justify-content: center;
   align-items: center;
   border: 1px solid black;
+  margin-left: 8.5%;
+  margin-right: 8.5%;
+  margin-top: .8%;
 }
 
 .public-game-card {
@@ -101,6 +104,8 @@
   border: 1px solid black;
   width: 50%;
   text-align: center;
+  margin-top: .5em;
+  margin-bottom: .5em;
 }
 
 .public-game-card-text {
@@ -128,6 +133,9 @@
   justify-content: center;
   align-items: center;
   border: 1px solid black;
+  margin-left: 8.5%;
+  margin-right: 8.5%;
+  margin-top: .8%;
 }
 
 .public-element-card {
@@ -136,6 +144,8 @@
   border: 1px solid black;
   width: 50%;
   text-align: center;
+  margin-top: .5em;
+  margin-bottom: .5em;
 }
 
 .public-element-card-text {
@@ -163,6 +173,9 @@
   justify-content: center;
   align-items: center;
   border: 1px solid black;
+  margin-left: 8.5%;
+  margin-right: 8.5%;
+  margin-top: .8%;
 }
 
 .user-game-card {
@@ -171,6 +184,8 @@
   border: 1px solid black;
   width: 50%;
   text-align: center;
+  margin-top: .5em;
+  margin-bottom: .5em;
 }
 
 .user-game-card-text {
@@ -198,6 +213,9 @@
   justify-content: center;
   align-items: center;
   border: 1px solid black;
+  margin-left: 8.5%;
+  margin-right: 8.5%;
+  margin-top: .8%;
 }
 
 .user-element-card {
@@ -206,6 +224,8 @@
   border: 1px solid black;
   width: 50%;
   text-align: center;
+  margin-top: .5em;
+  margin-bottom: .5em;
 }
 
 .user-element-card-text {
