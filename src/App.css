@@ -7,7 +7,7 @@
   background-image : url(http://api.thumbr.it/whitenoise-361x370.png?background=ffffffff&noise=5c5c5c&density=13&opacity=62);
 } */
 
-.App-header {
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -16,10 +16,14 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} */
 
 .App-link {
   color: #61dafb;
+}
+
+div {
+  white-space: pre-wrap;
 }
 
 .button {
@@ -109,7 +113,17 @@
   flex-direction: column;
 }
 
-
+.new-game-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid black; */
+  margin-left: 8.5%;
+  margin-right: 8.5%;
+  /* margin-top: .8%; */
+  background-color: lightgray
+}
 
 .element-edit-form-components {
   display: flex;

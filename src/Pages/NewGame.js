@@ -29,15 +29,15 @@ class NewGame extends React.Component {
             body: JSON.stringify(newGame)
         })
             .then(resp => resp.json())
-        //     .then(json => {
-        //     this.context.history.push(`/usergames/${json.id}`);
-        // });
+            .then(json => {
+                this.props.history.push(`/userhome/1`);
+            });
     };
 
     render() {
         console.log('the id of this game is', this.props.id)
         return (
-          <div>
+          <div className='new-game-form'>
             <h1>Game</h1>
             <form onSubmit={this.handleSubmit}>
               <label>Title: </label>
