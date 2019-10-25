@@ -77,10 +77,9 @@ class UserGameView extends React.Component {
                 body: JSON.stringify({title: this.props.selectedGame.title, description: this.props.selectedGame.description, published: false, user_id: this.props.user_id})
             })
                 .then(resp => resp.json())
+                .then(json => {this.props.history.push(`/home`);
+        });
         }
-        //     .then(json => {
-        //     this.context.history.push(`/usergames/${json.id}`);
-        // });
     };
 
     render() {

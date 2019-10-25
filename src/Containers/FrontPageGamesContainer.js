@@ -29,7 +29,7 @@ class FrontPageGamesContainer extends React.Component {
             />)
         return (
             <div className='front-page-game-container'>
-                <h2>Check out some of our highest rated games!</h2>
+                <h2>Check out some of our public games!</h2>
                 {publicGamesComponents}
             </div>
         )

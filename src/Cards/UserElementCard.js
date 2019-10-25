@@ -33,7 +33,7 @@ class UserElementCard extends React.Component {
                     </div>
                     <div className='user-element-card-description'>
                         <p>{this.props.description}</p>
-                        {/* <button onClick={this.handleClick}>Delete</button> */}
+                        <button className='delete-button' onClick={this.handleClick}>Delete</button>
                     </div>
                 </div>
             </div>

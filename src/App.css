@@ -3,10 +3,6 @@
   background-color: white;
 }
 
-/* body {
-  background-image : url(http://api.thumbr.it/whitenoise-361x370.png?background=ffffffff&noise=5c5c5c&density=13&opacity=62);
-} */
-
 /* .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -31,6 +27,14 @@ div {
   border-radius: 5px;
   margin: .08em;
   font-size: 1.0em;
+}
+
+.delete-button {
+  background-color: red;
+  border-radius: 5px;
+  margin-left: 2em;
+  font-size: 0.7em;
+  height: 2em;
 }
 
 .editbutton {
@@ -158,7 +162,7 @@ div {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   margin-left: 8.5%;
   margin-right: 8.5%;
   /* margin-top: .8%; */
